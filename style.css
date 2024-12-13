@@ -110,3 +110,42 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 .info {
   height: 200px;
 }
+.coin {
+  position: absolute;
+}
+.coin span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: gold;
+  border-radius: 50%;
+  border: 5px solid #f0c420;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 100;
+}
+.coin1 {
+  left: 160px;
+  top: 220px;
+}
+.coin2 {
+  left: 317px;
+  top: 52px;
+}
+.coin3 {
+  left: 300px;
+  top: 210px;
+}
+
+.coin span::before {
+  content: "s";
+  font-size: 20px;
+  color: #8a5c29;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#game {
+  position: relative;
+}
