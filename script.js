@@ -32,6 +32,7 @@ function gameOver() {
 function startGame() {
   displayScore("");
   is_game_running = true;
+  document.getElementById("start-sound").play();
   for (let i = 0; i < boundaries.length; i++)
     boundaries[i].style.backgroundColor = "#eeeeee";
   if (is_game_running) {
