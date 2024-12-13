@@ -149,3 +149,18 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
 #game {
   position: relative;
 }
+#reset {
+  text-align: center;
+  margin: 20px;
+}
+#reset p {
+  padding: 10px 20px;
+  border: solid, #5353e0, 2px;
+  width: fit-content;
+  background-color: #8888ff;
+  color: white;
+  transition-duration: 0.2s;
+}
+#reset p:hover {
+  background-color: #3131cb;
+}

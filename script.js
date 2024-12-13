@@ -10,6 +10,7 @@ let boundaries;
 let status_display;
 let timer;
 let coins;
+let reset;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -77,10 +78,13 @@ function loadPage() {
   status_display = document.getElementById("status");
   timer = document.getElementById("timer");
   coins = document.getElementsByClassName("coin");
+  reset = document.getElementById("reset");
 
   end.addEventListener("mouseover", endGame);
   start.addEventListener("click", startGame);
-
+  reset.addEventListener("click", () => {
+    location.reload();
+  });
   for (let i = 0; i < boundaries.length; i++) {
     boundaries[i].addEventListener("mouseover", gameOver);
   }
