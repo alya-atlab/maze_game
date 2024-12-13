@@ -8,6 +8,7 @@ let start;
 let boundaries;
 let status_display;
 let time_reamining = 10;
+let timer;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -39,7 +40,7 @@ function update_time() {
   if (!is_game_running) {
     return;
   }
-  status_display.innerHTML = time_reamining;
+  timer.innerHTML = "time: " + time_reamining;
   if (time_reamining == 0) {
     gameOver();
   } else {
@@ -62,6 +63,7 @@ function loadPage() {
   start = document.getElementById("start");
   boundaries = document.getElementsByClassName("boundary");
   status_display = document.getElementById("status");
+  timer = document.getElementById("timer");
 
   end.addEventListener("mouseover", endGame);
   start.addEventListener("click", startGame);
