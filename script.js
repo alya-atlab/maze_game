@@ -41,6 +41,7 @@ function startGame() {
     coin.addEventListener("mouseover", () => {
       score += 5;
       coin.remove();
+      document.getElementById("coin-sound").play();
     });
   });
 }
