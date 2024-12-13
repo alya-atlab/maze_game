@@ -22,6 +22,7 @@ function gameOver() {
   if (is_game_running) {
     for (let i = 0; i < boundaries.length; i++)
       boundaries[i].style.backgroundColor = "rgb(243, 159, 159)";
+    document.getElementById("loose-sound").play();
     if (score > 0) score = score - 1;
     displayScore("Game Over!");
     is_game_running = false;
