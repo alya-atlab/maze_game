@@ -31,8 +31,14 @@ function startGame() {
   is_game_running = true;
   for (let i = 0; i < boundaries.length; i++)
     boundaries[i].style.backgroundColor = "#eeeeee";
+  if (is_game_running) {
+    setInterval(update_time, 1000);
+  }
 }
-function updata_time() {
+function update_time() {
+  if (!is_game_running) {
+    return;
+  }
   status_display.innerHTML = time_reamining;
   if (time_reamining == 0) {
     gameOver();
@@ -40,6 +46,7 @@ function updata_time() {
     time_reamining--;
   }
 }
+
 function endGame() {
   if (is_game_running) {
     for (let i = 0; i < boundaries.length; i++)
