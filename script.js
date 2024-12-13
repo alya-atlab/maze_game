@@ -62,6 +62,7 @@ function endGame() {
   if (is_game_running) {
     for (let i = 0; i < boundaries.length; i++)
       boundaries[i].style.backgroundColor = "rgb(113 225 141)";
+    document.getElementById("win-sound").play();
     score = score + 5;
     displayScore("You Won!");
     is_game_running = false;
