@@ -1,14 +1,15 @@
 //Initialized variables
 let is_game_running = false;
 let score = 0;
+let time_reamining = 10;
 
 //Declared variables
 let end;
 let start;
 let boundaries;
 let status_display;
-let time_reamining = 10;
 let timer;
+let coins;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -35,6 +36,13 @@ function startGame() {
   if (is_game_running) {
     setInterval(update_time, 1000);
   }
+
+  [...coins].forEach((coin) => {
+    coin.addEventListener("mouseover", () => {
+      score += 5;
+      coin.remove();
+    });
+  });
 }
 function update_time() {
   if (!is_game_running) {
@@ -64,9 +72,11 @@ function loadPage() {
   boundaries = document.getElementsByClassName("boundary");
   status_display = document.getElementById("status");
   timer = document.getElementById("timer");
+  coins = document.getElementsByClassName("coin");
 
   end.addEventListener("mouseover", endGame);
   start.addEventListener("click", startGame);
+
   for (let i = 0; i < boundaries.length; i++) {
     boundaries[i].addEventListener("mouseover", gameOver);
   }
