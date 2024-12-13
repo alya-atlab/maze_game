@@ -7,6 +7,7 @@ let end;
 let start;
 let boundaries;
 let status_display;
+let time_reamining = 10;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -31,7 +32,14 @@ function startGame() {
   for (let i = 0; i < boundaries.length; i++)
     boundaries[i].style.backgroundColor = "#eeeeee";
 }
-
+function updata_time() {
+  status_display.innerHTML = time_reamining;
+  if (time_reamining == 0) {
+    gameOver();
+  } else {
+    time_reamining--;
+  }
+}
 function endGame() {
   if (is_game_running) {
     for (let i = 0; i < boundaries.length; i++)
